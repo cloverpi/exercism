@@ -28,7 +28,7 @@ func YearsBeforeDesiredBalance(balance, targetBalance float64) int {
 	var years int
 	projectedBalance := balance
 	for years = 0; projectedBalance < targetBalance; years++ {
-		projectedBalance += AnnualBalanceUpdate(projectedBalance) - projectedBalance
+		projectedBalance = AnnualBalanceUpdate(projectedBalance)
 	}
 	return years
 }
